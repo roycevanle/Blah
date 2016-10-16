@@ -16,8 +16,8 @@ class Facility(models.Model):
     name = models.TextField(null=False, blank=False)
     website = models.TextField(null=True, blank=True)  # optional
     phone_number = models.TextField(null=True, blank=True)  # optional
-    phone_open_time = models.TimeField(null=True, blank=True)  # optional
-    phone_close_time = models.TimeField(null=True, blank=True)  # optional
+    open_time = models.TimeField(null=True, blank=True)  # optional
+    close_time = models.TimeField(null=True, blank=True)  # optional
 
     # address
     address_line_1 = models.TextField(null=False, blank=False)
@@ -89,6 +89,9 @@ class PrimarySecondaryNeed(models.Model):
 
 
 class Commodity(models.Model):
+    def __str__(self):
+        return self.name
+
     facility = models.ForeignKey(Facility)
 
     name = models.TextField(null=False, blank=False)
@@ -97,4 +100,3 @@ class Commodity(models.Model):
     # 2 = in stock, 1 = low stock, 0 = out of stock
     stock_level = models.IntegerField(null=False, blank=False,
                                       validators=[MinValueValidator(0), MaxValueValidator(2)])
-

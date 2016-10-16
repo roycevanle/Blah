@@ -1,0 +1,147 @@
+{% extends 'resource_finder/base.html' %}
+
+{% block title %}{{ facility.name }}{% endblock %}
+
+{% block main_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{ facility.name }}</h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Contact Information & Location</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% if facility.open_time and facility.close_time %}
+                            <p>
+                                <b>Hours of Operation</b><br>
+                                {{ facility.open_time }} &mdash; {{ facility.close_time }}
+                            </p>
+                        {% endif %}
+                        {% if facility.phone_number %}
+                            <p>
+                                <b>Phone Number</b><br>
+                                {{ facility.phone_number }}
+                            </p>
+                        {% endif %}
+                        {% if website %}
+                            <p>
+                                <b>Website</b><br>
+                                <a target="_blank" href="{{ website }}">{{ website }}</a>
+                            </p>
+                        {% endif %}
+                        <p>
+                            <b>Street Address</b>
+                            <br>
+                            {{ facility.address_line_1 }}<br>
+                            {% if facility.address_line_2 %}
+                                {{ facility.address_line_2 }}<br>
+                            {% endif %}
+                            {{ facility.city }}, {{ facility.state }} {{  facility.zip_code }}
+                            <br><br>
+                            <iframe
+                                    width="100%"
+                                    height="250px"
+                                    frameborder="0" style="border:0"
+                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD3VnPeOMh58Z7mUZKgglDQuNwrZ5Vryag
+    &q={{ facility.address_line_1 }}+{{ facility.zip_code }}" allowfullscreen>
+                            </iframe>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Description</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{ facility.description }}
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Accessibility Features</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            {% if facility.pets_allowed %}
+                                <li>Pets Allowed</li>
+                            {% endif %}
+                            {% if facility.children_allowed %}
+                                <li>Children Under 18 Allowed</li>
+                            {% endif %}
+                            {% if facility.male_only %}
+                                <li>Men Only</li>
+                            {% endif %}
+                            {% if facility.female_only %}
+                                <li>Women Only</li>
+                            {% endif %}
+                            {% if facility.mental_disability_focus %}
+                                <li>Mental Disability Focus</li>
+                            {% endif %}
+                            {% if facility.physical_disability_focus %}
+                                <li>Physical Disability Focus</li>
+                            {% endif %}
+                            {% if facility.lgbt_focus %}
+                                <li>LGBTQ Focus</li>
+                            {% endif %}
+                            {% if facility.veteran_focus %}
+                                <li>Veteran Focus</li>
+                            {% endif %}
+                            {% if facility.drug_free %}
+                                <li>Drug Free</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Resources</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            {% for feature in features %}
+                                <li>{{ feature }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Available Commodities</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            {% for commodity in commodities %}
+                                {% if commodity.stock_level != 0 %}
+                                    <li>
+                                        <p><span style="font-size:16px;"><b>{{ commodity.name }}</b></span><br>
+                                            {% if commodity.description %}
+                                                {{ commodity.description }}<br>
+                                            {% endif %}
+                                            {% if commodity.stock_level == 1 %}
+                                                <span style="color: firebrick;">Low on stock</span>
+                                            {% else %}
+                                                <span style="color: darkgreen;">In stock</span>
+                                            {% endif %}
+                                        </p>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

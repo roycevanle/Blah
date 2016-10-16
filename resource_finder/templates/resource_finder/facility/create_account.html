@@ -1,0 +1,62 @@
+{% extends 'resource_finder/base.html' %}
+{% load static %}
+
+{% block title %}Loci{% endblock %}
+
+{% block main_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Create Facility Account</h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <form role="form" id="account_creation_form">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Your Personal Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="first_name">
+                                    First Name
+                                </label>
+                                <input class="form-control" type="text" id="first_name" required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">
+                                    Last Name
+                                </label>
+                                <input class="form-control" type="text" id="last_name" required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email_address">
+                                    Email Address
+                                </label>
+                                <input class="form-control" type="email" id="email_address" required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Facility Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="facility_name">Facility Name</label>
+                                <input class="form-control" type="text" id="facility_name" required="true">
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'resource_finder/js/validate-form.js' %}"></script>
+{% endblock %}

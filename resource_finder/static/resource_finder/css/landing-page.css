@@ -23,6 +23,8 @@ h6 {
 
 .topnav {
     font-size: 14px; 
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .lead {
@@ -159,7 +161,9 @@ h6 {
         margin-bottom: 0;
     }
 }
-
+#collective_mission {
+    font-size: 18px;
+}
 footer {
     padding: 50px 0;
     background-color: #f8f8f8;

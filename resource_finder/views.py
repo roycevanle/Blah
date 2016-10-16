@@ -9,3 +9,10 @@ def index(request):
     }
     return render(request, 'resource_finder/index.html', context)
 
+
+def primary_needs(request):
+    context = {
+
+    }
+
+    return render(request, 'resource_finder/get_resources/primary_needs.html', context)

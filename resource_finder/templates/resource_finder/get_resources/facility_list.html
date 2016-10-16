@@ -1,0 +1,30 @@
+{% extends 'resource_finder/base.html' %}
+
+{% block title %}Matching Facilities{% endblock %}
+
+{% block main_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Matching Facilities</h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                {% for facility in facilities %}
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="{% url 'resource_finder:view_facility' facility_id=facility.id %}">{{ facility.name }}</a></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

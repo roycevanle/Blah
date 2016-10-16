@@ -82,3 +82,29 @@ def give_to_facility(request):
     }
 
     return render(request, 'resource_finder/give_resources/facility_list.html', context)
+
+
+def list_relevant_facilities(request):
+    switches = []
+    for a in request.GET:
+        switches += a
+
+    facilities = Facility.objects.all()
+
+    fac_for_template = []
+
+    for f in facilities:
+        yes = f.primarysecondaryneed_set.filter(id__in=switches)
+        if len(yes) != 0:
+            fac_for_template.append({
+                'name': f.name,
+                'id': f.id,
+                'description': f.description,
+                'resources': f.primarysecondaryneed_set
+            })
+
+    context = {
+        'facilities': facilities
+    }
+
+    return render(request, 'resource_finder/get_resources/facility_list.html', context)

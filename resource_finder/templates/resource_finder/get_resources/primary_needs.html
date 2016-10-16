@@ -6,19 +6,28 @@
 {% block main_content %}
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center" style="font-size: 50px;">Primary Needs</h1>
-                <form role="form">
+            <form role="form" id="gogogo" method="get" action="{% url 'resource_finder:list_relevant_facilities' %}">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 class="text-center" style="font-size: 50px;">Primary Needs</h1>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-lg btn-success grid-btn" onclick="$('#gogogo').submit();">Next</button>
+                        </div>
+                    </div>
                     <div class="btn-group" data-toggle="buttons">
                         {% for primary_need in primary_needs %}
                             <span class="button-checkbox col-md-6">
                                 <button type="button" class="btn btn-lg grid-btn btn-primary">{{ primary_need.name }}</button>
-                                <input type="checkbox" class="hidden" id="{{ primary_need.id }}">
+                                <input type="checkbox" class="hidden" name="{{ primary_need.id }}">
                             </span>
                         {% endfor %}
                     </div>
-                </form>
-            </div>
+                    <div class="row">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}

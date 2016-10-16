@@ -12,6 +12,7 @@
         <br>
         <div class="row">
             <div class="col-md-12">
+            {% if facilities %}
                 {% for facility in facilities %}
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -34,6 +35,11 @@
                         </div>
                     </div>
                 {% endfor %}
+            {% else %}
+                <div class="well">
+                    <h2>No matching facilities found, try loosening your criterion.</h2>
+                </div>
+            {% endif %}
             </div>
         </div>
     </div>

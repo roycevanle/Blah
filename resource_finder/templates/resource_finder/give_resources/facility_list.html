@@ -27,6 +27,7 @@
         <div class="row">
             <div class="col-md-12">
                 {% for facility in facilities %}
+                    {% if facility.commodities_low or facility.commodities_out %}
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><a href="{% url 'resource_finder:view_facility' facility_id=facility.id %}">{{ facility.name }}</a></h3>
@@ -52,6 +53,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

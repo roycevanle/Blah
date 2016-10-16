@@ -86,21 +86,24 @@ def give_to_facility(request):
 
 def list_relevant_facilities(request):
     switches = []
+
     for a in request.GET:
         switches += a
 
-    facilities = Facility.objects.filter(primarysecondaryneed__id__in=switches)
+    facilities = Facility.objects.all()
 
     fac_for_template = []
 
     for f in facilities:
         yes = f.primarysecondaryneed_set.filter(id__in=switches)
-        if len(yes) == len(switches):
+        if len(yes) != 0:
             fac_for_template.append({
                 'name': f.name,
                 'id': f.id,
                 'description': f.description,
-                'resources': f.primarysecondaryneed_set
+                'resources': f.primarysecondaryneed_set,
+                'matching_needs':  len(yes),
+                'total_needs': len(switches)
             })
 
     context = {

@@ -15,15 +15,21 @@
                 {% for facility in facilities %}
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><a href="{% url 'resource_finder:view_facility' facility_id=facility.id %}">{{ facility.name }}</a></h3>
+                            <h3 class="panel-title"><a href="{% url 'resource_finder:view_facility' facility_id=facility.id %}">{{ facility.name }} &mdash; {{ facility.matching_needs }}/{{ facility.total_needs }} needs matched</a></h3>
                         </div>
                         <div class="panel-body">
-                            {{ facility.description }}
+                            <p>
+                                {{ facility.description }}
+                            </p>
+
+                            <p>
+                                <b>Resources offered</b>
                             <ul>
                                 {% for resource in facility.resources.all %}
                                     <li>{{ resource }}</li>
                                 {% endfor %}
                             </ul>
+                            </p>
 
                         </div>
                     </div>

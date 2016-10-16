@@ -37,14 +37,17 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background: url(../img/home-img.jpg) no-repeat center center;
     background-size: cover;
+    height:100%;
+    width:auto;
 }
 
 .intro-message {
     position: relative;
     padding-top: 20%;
     padding-bottom: 20%;
+    color: black;
 }
 
 .intro-message > h1 {
@@ -162,8 +165,16 @@ h6 {
     }
 }
 #collective_mission {
-    font-size: 18px;
+    font-size: 20px;
+    font-family: "Helvetica";
 }
+
+.intro-message h2 {
+    font-size: 50px;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
 footer {
     padding: 50px 0;
     background-color: #f8f8f8;

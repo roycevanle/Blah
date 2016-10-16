@@ -20,25 +20,24 @@
         <div class="topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-				<i class="fa fa-home fa-3x" style="padding-right: 20px;" aria-hidden="true"></i>
-			<a href="{% url 'resource_finder:guest_sorter' %}" class="btn btn-info" role="button">Pathfinder</a>
+                <img src="{% static 'resource_finder/img/loci_logo.png' %}" style="padding-top: 5px;">
+<!-- 				<i class="fa fa-home fa-3x" style="padding-right: 20px;" aria-hidden="true"></i> -->
+			<a href="{% url 'resource_finder:guest_sorter' %}" style="font-size: 35px; text-decoration: none;">Pathfinder</a>
 
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Emergency Hotline</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Suicide Hotline: 2062228284</a>
+                        <a href="#">Domestic Abuse Hotline: 2538940001</a>
+                        <a href="#">AIDS Hotline: 2068761423</a>
+                    </div>
+                </div>
             </div>
-            <!-- /.navbar-collapse -->
+
         </div>
         <!-- /.container -->
     </nav>
@@ -53,17 +52,14 @@
                 <div class="col-lg-12">
                     <div class="intro-message">
                         <h1>Collective Mission </h1>
-                        <h2>"Big 5"</h2>
+<!--                         <h2>"Big 5"</h2> -->
                         <hr class="intro-divider">
                         <div id="collective_mission">
 	                        <p>
-	                        	Everyone* shares responsibility to respect, honor, and encourage the backgrounds of all individuals. Everyone shares responsibility to keep the space* safe and confidential for individuals and the community*. Everyone shares responsibility to clean, maintain, and respect the space. We strive to provide services that are guest-centered and empower everyone by interrupting oppression and holding ourselves and each other accountable. We strive to expand access by dismantling barriers and by following a harm reduction approach.
-	                        </p>
-	                        <p>
-	                        	*Who is everyone? “Everyone” includes staff, volunteers, guests, board members, donors, and community partners. When these rules apply? All the time
-	                        </p>
-	                        <p>
-	                        	*What is the space? Our “space” includes the shelter, the church, the alley, and surrounding businesses
+                            Our “Pathfinder” tool empowers anyone with the ability to filter through their local resources to locate the best opportunity nearest to them.
+                            <br>
+                            <br>
+                            Our “Facility” tool enables resource providers to both make their opportunities known to those in need, and to notify those within the vicinity of the Facility’s donation needs.
 	                        </p>
                         </div>
                     </div>
@@ -74,24 +70,28 @@
         <!-- /.container -->
 
     </div>
-    <!-- /.intro-header -->
 
     <!-- Page Content -->
-
+    <div class="text-center row faq_flat_section" style="background-color: #113743;">
+        <h1 class="section-heading" style="font-size: 50px; color:#e4e3db;">Partners</h1>
+    </div>
 	<a  name="services"></a>
     <div class="content-section-a">
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
+                <div class="text-center col-lg-12 col-sm-12">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Partners<br>Special Thanks</h2>
                     <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="../../static/resource_finder/img/ipad.png" alt="">
-                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6">
+                        <img class="" src="../../static/resource_finder/img/neighborcare.png" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <img class="" src="../../static/resource_finder/img/youth_care.png" alt="">
+                    </div>
             </div>
 
         </div>
@@ -100,19 +100,34 @@
     </div>
     <!-- /.content-section-a -->
 
+    <div class="text-center row faq_flat_section" style="background-color: #113743;">
+        <h1 class="section-heading" style="font-size: 50px; color:#e4e3db;">Services</h1>
+    </div>
     <div class="content-section-b">
 
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Services</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                  <div class="col-md-4">
+                    <img class="img-responsive" src="../../static/resource_finder/img/bed.jpg" alt="">
                 </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="../../static/resource_finder/img/dog.png" alt="">
+                <div class="col-md-4">
+                    <img class="img-responsive" src="../../static/resource_finder/img/laundry.jpg" alt="">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-responsive" src="../../static/resource_finder/img/education.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="text-center col-md-4">
+                    Bedding search
+                </div>
+                <div class="text-center col-md-4">
+                    Laundry search
+                </div>
+                <div class="text-center col-md-4">
+                    Education search
                 </div>
             </div>
 
@@ -120,4 +135,26 @@
         <!-- /.container -->
 
     </div>
+    <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
 {% endblock %}

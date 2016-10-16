@@ -1,0 +1,17 @@
+{% extends 'resource_finder/base.html' %}
+
+{% block title %}Loci{% endblock %}
+
+{% block main_content %}
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">What do you want to do?</h1>
+                    <hr>
+                    <button onclick="window.location = '{% url 'resource_finder:primary_needs' %}'" class="btn btn-lg btn-full-width btn-extra-lg btn-success">Get Resources</button>
+                    <br><br>
+                    <button class="btn btn-lg btn-full-width btn-primary">Give Resources</button>
+                </div>
+            </div>
+    </div>
+{% endblock %}

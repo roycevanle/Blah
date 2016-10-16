@@ -60,12 +60,22 @@
 .show {display:block;}
 
 #rock {
-    width: 150px;
-    height: 150px;
-    background-image: url(http://th07.deviantart.net/fs70/150/i/2013/012/c/6/rock_01_png___by_alzstock-d5r84up.png);
+    background-image: url("../../../static/resource_finder/img/bonsai.png");
     background-repeat: no-repeat;
+    color: black;
+    font-size: 50px;
+    background-position: center;
+    background-color: Transparent;
 }
 
+#rock1 {
+    background-image: url("../../../static/resource_finder/img/gardening.png");
+    background-repeat: no-repeat;
+    color: black;
+    font-size: 50px;
+    background-position: center;
+    background-color: Transparent;
+}
 @media screen and (min-width: 768px) {
     .grid-btn {
         margin: 10px;

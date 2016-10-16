@@ -59,6 +59,12 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
+#rock {
+    width: 150px;
+    height: 150px;
+    background-image: url(http://th07.deviantart.net/fs70/150/i/2013/012/c/6/rock_01_png___by_alzstock-d5r84up.png);
+    background-repeat: no-repeat;
+}
 
 @media screen and (min-width: 768px) {
     .grid-btn {

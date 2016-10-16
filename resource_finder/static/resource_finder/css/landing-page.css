@@ -43,11 +43,10 @@ h6 {
 }
 
 .intro-message {
-    font-family: Veranda, Arial;
     position: relative;
     padding-top: 20%;
     padding-bottom: 20%;
-    color: #113743;
+    color: black;
 }
 
 .intro-message > h1 {
@@ -165,7 +164,8 @@ h6 {
     }
 }
 #collective_mission {
-    font-size: 18px;
+    font-size: 20px;
+    font-family: Verdana;
 }
 footer {
     padding: 50px 0;

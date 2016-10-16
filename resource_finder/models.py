@@ -6,6 +6,9 @@ from django.db import models
 
 
 class Facility(models.Model):
+    def __str__(self):
+        return self.name
+
     # each user has one facility
     user = models.OneToOneField(User)
 
@@ -74,8 +77,11 @@ class Facility(models.Model):
 
 # features are universal, and are only changed by site admins
 class PrimarySecondaryNeed(models.Model):
+    def __str__(self):
+        return self.name
+
     # each facility can meet multiple needs, each need can be applicable to multiple facilities
-    facilities = models.ManyToManyField(Facility)
+    facilities = models.ManyToManyField(Facility, blank=True)
 
     name = models.TextField(blank=False, null=False)
     big_image = models.TextField(blank=True, null=True)

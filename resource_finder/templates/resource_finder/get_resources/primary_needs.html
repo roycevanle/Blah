@@ -1,13 +1,28 @@
 {% extends 'resource_finder/base.html' %}
+{% load static %}
 
 {% block title %}Loci{% endblock %}
 
 {% block main_content %}
     <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Primary Needs</h1>
-                </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Primary Needs</h1>
+                <form role="form">
+                    <div class="btn-group" data-toggle="buttons">
+                        {% for primary_need in primary_needs %}
+                            <span class="button-checkbox">
+                                <button type="button" class="btn btn-lg grid-btn btn-primary">{{ primary_need.name }}</button>
+                                <input type="checkbox" class="hidden" id="{{ primary_need.id }}">
+                            </span>
+                        {% endfor %}
+                    </div>
+                </form>
             </div>
+        </div>
     </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'resource_finder/js/button-checkbox.js' %}"></script>
 {% endblock %}

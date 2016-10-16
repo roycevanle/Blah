@@ -37,14 +37,17 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background: url(../img/home-img.jpg) no-repeat center center;
     background-size: cover;
+
 }
 
 .intro-message {
+    font-family: Veranda, Arial;
     position: relative;
     padding-top: 20%;
     padding-bottom: 20%;
+    color: #113743;
 }
 
 .intro-message > h1 {

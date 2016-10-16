@@ -18,9 +18,13 @@
                             <h3 class="panel-title"><a href="{% url 'resource_finder:view_facility' facility_id=facility.id %}">{{ facility.name }}</a></h3>
                         </div>
                         <div class="panel-body">
-                            <div class="row">
+                            {{ facility.description }}
+                            <ul>
+                                {% for resource in facility.resources.all %}
+                                    <li>{{ resource }}</li>
+                                {% endfor %}
+                            </ul>
 
-                            </div>
                         </div>
                     </div>
                 {% endfor %}

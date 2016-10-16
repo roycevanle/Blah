@@ -89,13 +89,13 @@ def list_relevant_facilities(request):
     for a in request.GET:
         switches += a
 
-    facilities = Facility.objects.all()
+    facilities = Facility.objects.filter(primarysecondaryneed__id__in=switches)
 
     fac_for_template = []
 
     for f in facilities:
         yes = f.primarysecondaryneed_set.filter(id__in=switches)
-        if len(yes) != 0:
+        if len(yes) == len(switches):
             fac_for_template.append({
                 'name': f.name,
                 'id': f.id,
@@ -104,7 +104,7 @@ def list_relevant_facilities(request):
             })
 
     context = {
-        'facilities': facilities
+        'facilities': fac_for_template
     }
 
     return render(request, 'resource_finder/get_resources/facility_list.html', context)

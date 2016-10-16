@@ -19,7 +19,16 @@
                     <div class="btn-group" data-toggle="buttons">
                         {% for primary_need in primary_needs %}
                             <span class="button-checkbox col-md-6">
-                                <button type="button" class="btn btn-lg grid-btn btn-primary">{{ primary_need.name }}</button>
+                                <button type="button" class="btn btn-lg grid-btn btn-primary" 
+                                style="
+                                color:black;
+                                font-size: 50px;
+                                background-position: center;
+                                background-color: Transparent;
+                                background-repeat: no-repeat;
+                                background-image: url("/static/resource_finder/img/{{ big_image.id}}")>
+                                {{ primary_need.name }}
+                                </button>
                                 <input type="checkbox" class="hidden" name="{{ primary_need.id }}">
                             </span>
                         {% endfor %}
